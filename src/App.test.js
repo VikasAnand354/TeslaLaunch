@@ -1,5 +1,5 @@
 import React from 'react'
-import { act, render, cleanup, screen } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import '@testing-library/jest-dom'
 
 import axiosMock from 'axios'
@@ -7,12 +7,17 @@ import App from './App'
 
 jest.mock("axios");
 
-describe('App', () => {
+
+describe('fetchLaunch', () => {
+  const url='https://api.spacexdata.com/v4/launches/past';
   test('fetches data from api', () => {
     render(<App />);
-    const url='https://api.spacexdata.com/v4/launches/past';
-    axiosMock.get.mockResolvedValueOnce({ data: { name: "vikas" ,details:"hello there",image:"abc.jpg"}});//this is not working 
+    axiosMock.get.mockResolvedValueOnce({ data: { name: "vikas" ,details:"hello there",link:{ patch:{small:'abc.jpg' }}}});
     expect(axiosMock.get).toHaveBeenCalledTimes(1);
     expect(axiosMock.get).toHaveBeenCalledWith(url);
-  })
-})
+  });
+ 
+});
+
+
+
