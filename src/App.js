@@ -36,6 +36,7 @@ const paginate=(pageNumber)=>{
 return (
   
   <div style={{ backgroundImage: `url(${background})`,backgroundPosition: 'center', backgroundSize: 'cover',backgroundRepeat: 'no-repeat'}}>
+  <h1 className="text-center text-light bg-dark">Launch Details of SpaceX</h1>
   <Launch launches={currentLaunches} loading= {loading}/>
   <Pagination launchesPerPage={launchesPerPage} totalLaunches={launches.length} paginate={paginate}/>
   </div>

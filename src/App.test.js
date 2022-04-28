@@ -1,5 +1,5 @@
 import React from 'react'
-import { render } from '@testing-library/react'
+import { render ,screen} from '@testing-library/react'
 import '@testing-library/jest-dom'
 
 import axiosMock from 'axios'
@@ -16,6 +16,10 @@ describe('fetchLaunch', () => {
     expect(axiosMock.get).toHaveBeenCalledTimes(1);
     expect(axiosMock.get).toHaveBeenCalledWith(url);
   });
+
+  it('returns api values',async()=>{
+    const values = await
+  })
  
 });
 
