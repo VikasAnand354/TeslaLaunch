@@ -7,10 +7,10 @@ import React  from 'react'
     
   return (
 <>
-<div className="container mt-5 mb-5">
+<div className="container pt-5">
 {launches.map((launches) => (  
-<div className="card text-center bg-info" key={launches.id} style= {{width: '18rem'}}>
-  <img src={launches.links.patch.small} className="card-img-top " alt="..."/>
+<div className="card text-center" key={launches.id} style= {{width: '18rem'}}>
+  <img src={launches.links.patch.small} className="card-img-top img-fluid" alt="..."/>
   <div className="card-body text-dark ">
     <h5 className="card-title">{launches.name}</h5>
     <p className="card-text">{launches.details}</p>
